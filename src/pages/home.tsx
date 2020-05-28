@@ -26,7 +26,7 @@ export class Home extends Component<Iprops> {
 }
 
 const mapStateToProps = (state: any) => ({
-  info: state.info,
+  info: state.info.info,
 })
 
 const mapDispatchToProps = (dispatch: any) => ({

@@ -24,7 +24,7 @@ export class About extends Component<Iprops> {
 }
 
 const mapStateToProps = (state: any) => ({
-  info: state.info,
+  info: state.info.info,
 })
 const mapDispatchToProps = (dispatch: any) => ({
   changeFromAbout: (text: object) => dispatch(changeFromAboutAction(text)),

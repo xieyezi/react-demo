@@ -24,7 +24,7 @@ export class Intro extends Component<Iprops> {
 }
 
 const mapStateToProps = (state: any) => ({
-  info: state.info,
+  info: state.info.info,
 })
 const mapDispatchToProps = (dispatch: any) => ({
   changeFormIntro: (text: object) => dispatch(changeFromHIntroAction(text)),
