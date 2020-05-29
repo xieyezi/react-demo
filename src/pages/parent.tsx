@@ -18,13 +18,14 @@ export class Parent extends Component<Istate> {
       info1: 'info1被改变了...',
     })
   }
+  change = () => {}
   render() {
     return (
       <div>
         <p>父组件</p>
         <Button onClick={this.info1Change}> 点击更改info1</Button>
         <Son1 info1={this.state.info1} />
-        <Son2 info1={this.state.info1} />
+        <Son2 info2={this.state.info2} change={this.change} />
         <Son3 info2={this.state.info2} />
       </div>
     )
