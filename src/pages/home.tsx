@@ -13,15 +13,15 @@ interface Iprops {
 export class Home extends Component<Iprops> {
   changeFormHome = () => {
     console.log(this.props)
-    // this.props.changeFromHome({ info: '从home更改state的info' })
-    this.props.history.push('parent')
+    this.props.changeFromHome({ info: '从home更改state的info' })
+    // this.props.history.push('detail')
   }
   render() {
     return (
       <div>
         <p>我是home页</p>
         <p>{this.props.info}</p>
-        <Button onClick={this.changeFormHome}>性能优化例子</Button>
+        <Button onClick={this.changeFormHome}> home点击更改redux</Button>
       </div>
     )
   }
