@@ -13,6 +13,8 @@
     "@types/react-router-dom": "^5.1.5",
     "antd": "^4.2.5",
     "connected-react-router": "^6.8.0",
+    "dva-core": "^2.0.2",
+    "eslint-config-react-app": "^5.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
@@ -20,6 +22,7 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "typescript": "~3.7.2"
+ 
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,6 +46,12 @@
     ]
   },
   "devDependencies": {
-    "@types/react-redux": "^7.1.9"
+    "@types/react-redux": "^7.1.9",
+    "@typescript-eslint/eslint-plugin": "^2.21.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1",
+    "pont-engine": "1.0.3"
   }
 }
