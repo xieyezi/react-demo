@@ -1,9 +1,11 @@
+import { getGoodsList } from '../../services'
+
 export const namespace = 'model1'
 interface IDvaState {
-  info1: string
+  goodsList: any[]
 }
 const state: IDvaState = {
-  info1: 'init info1'
+  goodsList: []
 }
 const model1 = {
   namespace,
@@ -18,6 +20,25 @@ const model1 = {
         })
         // eslint-disable-next-line no-empty
       } catch (error) {}
+    },
+    *getGoodsList(_, { call, put }) {
+      try {
+        const res = yield call(getGoodsList)
+        // console.log(res.data.banerList)
+        yield put({
+          type: 'setState',
+          payload: {
+            goodsList: res.data.banerList
+          }
+        })
+        // eslint-disable-next-line no-empty
+      } catch (error) {}
+    },
+    *clearData(_, { put }) {
+      yield put({
+        type: 'setState',
+        goodsList: []
+      })
     }
   },
   reducers: {

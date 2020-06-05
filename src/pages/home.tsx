@@ -1,37 +1,45 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-import { Button } from 'antd'
+import { Button, Card } from 'antd'
 import { namespace } from '../models/model1'
 
 interface Iprops {
-  info1?: string
+  goodsList: any[]
   dispatch: any
 }
 
-export class Home extends Component<Iprops> {
-  changeFormHome = () => {
-    const { dispatch } = this.props
+const Home: React.FC<Iprops> = ({ dispatch, goodsList }) => {
+  const [info, setInfo] = useState('init info')
+
+  // 获取商品列表
+  const getList = () => {
     dispatch({
-      type: `${namespace}/changeInfo1`,
-      payload: {
-        text: '从Home改变的info1'
-      }
+      type: `${namespace}/getGoodsList`
     })
   }
-  render() {
-    console.log(this.props.info1)
-    return (
-      <div style={{ marginTop: '5px', marginLeft: '400px', marginRight: '400px' }}>
-        <p>我是home页</p>
-        <p>{this.props.info1}</p>
-        <Button onClick={this.changeFormHome}> home点击更改redux</Button>
+  useEffect(() => {
+    getList()
+    return () => dispatch({ type: `${namespace}/clearData` })
+    // eslint-disable-next-line
+  }, [])
+
+  return (
+    <div style={{ marginTop: '5px', marginLeft: '400px', marginRight: '400px' }}>
+      <p>我是home页</p>
+      <p>{info}</p>
+      <Button onClick={() => setInfo('改变info')}> 点击更改info</Button>
+      <Button onClick={getList}> 点击获取列表</Button>
+      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
+        {goodsList.map((item, index) => {
+          return <Card hoverable style={{ width: 240 }} cover={<img alt="example" src={item} />}></Card>
+        })}
       </div>
-    )
-  }
+    </div>
+  )
 }
 
-const mapStateToProps = (model: any) => ({
-  info1: model[namespace].info1
+const mapStateToProps = model => ({
+  goodsList: model[namespace].goodsList
 })
 
 export default connect(mapStateToProps)(Home)

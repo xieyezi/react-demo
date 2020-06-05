@@ -12,6 +12,7 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-router-dom": "^5.1.5",
     "antd": "^4.2.5",
+    "axios": "^0.19.2",
     "connected-react-router": "^6.8.0",
     "dva-core": "^2.0.2",
     "eslint-config-react-app": "^5.2.1",
@@ -22,12 +23,11 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "typescript": "~3.7.2"
- 
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -51,7 +51,11 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "pont-engine": "1.0.3",
     "prettier": "^1.19.1",
-    "pont-engine": "1.0.3"
+    "customize-cra": "^0.9.1",
+    "customize-cra-react-refresh": "^1.0.1",
+    "react-app-rewired": "^2.1.5",
+    "babel-plugin-import": "^1.13.0"
   }
 }

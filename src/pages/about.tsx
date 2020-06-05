@@ -24,10 +24,10 @@ export class About extends Component<Iprops> {
 }
 
 const mapStateToProps = (state: any) => ({
-  info: state.info.info,
+  info: state.info.info
 })
 const mapDispatchToProps = (dispatch: any) => ({
-  changeFromAbout: (text: object) => dispatch(changeFromAboutAction(text)),
+  changeFromAbout: (text: object) => dispatch(changeFromAboutAction(text))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(About)
