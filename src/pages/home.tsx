@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useMemo, useCallback } from 'react'
 import { connect } from 'react-redux'
-import { Button, Card } from 'antd'
+import { Button, Input, Modal } from 'antd'
 import { namespace } from '../models/model1'
+import Son1 from './son1'
+import useVisible from '../hooks/useVisible'
 
 interface Iprops {
   goodsList: any[]
@@ -9,31 +11,39 @@ interface Iprops {
 }
 
 const Home: React.FC<Iprops> = ({ dispatch, goodsList }) => {
-  const [info, setInfo] = useState('init info')
+  const [info, setInfo] = useState('')
+  // const [visible, setVisible] = useState(true)
+  // const onVisible = useMemo(() => {
+  //   return () => {
+  //     setVisible(visible => !visible)
+  //   }
+  // }, [])
 
-  // 获取商品列表
-  const getList = () => {
-    dispatch({
-      type: `${namespace}/getGoodsList`
-    })
+  // const onVisible = useCallback(() => {
+  //   setVisible(visible => !visible)
+  // }, [])
+  // const changeInfo = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const value = e.target.value
+  //   setInfo(value)
+  // }
+  const [visible, setVisible] = useVisible(false)
+  const modalShow = (value: boolean) => {
+    setVisible(value)
   }
-  useEffect(() => {
-    getList()
-    return () => dispatch({ type: `${namespace}/clearData` })
-    // eslint-disable-next-line
-  }, [])
 
   return (
     <div style={{ marginTop: '5px', marginLeft: '400px', marginRight: '400px' }}>
-      <p>我是home页</p>
       <p>{info}</p>
-      <Button onClick={() => setInfo('改变info')}> 点击更改info</Button>
-      <Button onClick={getList}> 点击获取列表</Button>
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
-        {goodsList.map((item, index) => {
-          return <Card hoverable style={{ width: 240 }} cover={<img alt="example" src={item} />}></Card>
-        })}
-      </div>
+      {/* <Input onChange={e => changeInfo(e)}></Input> */}
+      {/* <Son1 onVisible={onVisible} /> */}
+      <Button type="primary" onClick={() => modalShow(true)}>
+        Open Modal
+      </Button>
+      <Modal title="Basic Modal" visible={visible} onOk={() => modalShow(false)} onCancel={() => modalShow(false)}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
     </div>
   )
 }

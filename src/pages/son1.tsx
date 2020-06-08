@@ -1,24 +1,15 @@
-import React, { Component } from 'react'
+import React, { memo } from 'react'
+import { Button } from 'antd'
 
 interface Iprops {
-  changeInfo: () => void
+  onVisible: () => void
 }
-
-// class Son1 extends Component<Iprops> {
-//   render() {
-//     console.log('son1重新渲染了....')
-//     return (
-//       <div>
-//         <p>我是son1</p>
-//         <p>{this.props.info1}</p>
-//       </div>
-//     )
-//   }
-// }
-const Son1: React.FC<Iprops> = ({ changeInfo }) => {
-
+const Son1: React.FC<Iprops> = ({ onVisible }) => {
+  console.log('我被重新渲染了....')
   return (
-    
+    <div>
+      <Button onClick={() => onVisible()}>button</Button>
+    </div>
   )
 }
-export default Son1
+export default memo(Son1)
