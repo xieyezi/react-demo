@@ -3698,10 +3698,10 @@ customize-cra-react-refresh@^1.0.1:
     "@pmmmwh/react-refresh-webpack-plugin" "^0.3.2"
     react-refresh "^0.8.1"
 
-customize-cra@^0.9.1:
-  version "0.9.1"
-  resolved "https://registry.npm.taobao.org/customize-cra/download/customize-cra-0.9.1.tgz#76b42c4f537c16329eccc09cfefd804d04c81550"
-  integrity sha1-drQsT1N8FjKezMCc/v2ATQTIFVA=
+customize-cra@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/customize-cra/download/customize-cra-1.0.0.tgz#73286563631aa08127ad4d30a2e3c89cf4e93c8d"
+  integrity sha1-cyhlY2MaoIEnrU0wouPInPTpPI0=
   dependencies:
     lodash.flow "^3.5.0"
 
@@ -9338,7 +9338,7 @@ react-app-polyfill@^1.0.6:
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
 
-react-app-rewired@^2.1.5:
+react-app-rewired@^2.1.6:
   version "2.1.6"
   resolved "https://registry.npm.taobao.org/react-app-rewired/download/react-app-rewired-2.1.6.tgz#33ee3076a7f34d6a7c94e649cac67e7c8c580de8"
   integrity sha1-M+4wdqfzTWp8lOZJysZ+fIxYDeg=

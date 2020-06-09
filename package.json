@@ -48,14 +48,14 @@
   "devDependencies": {
     "@types/react-redux": "^7.1.9",
     "@typescript-eslint/eslint-plugin": "^2.21.0",
+    "babel-plugin-import": "^1.13.0",
+    "customize-cra": "^1.0.0",
+    "customize-cra-react-refresh": "^1.0.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
     "pont-engine": "1.0.3",
     "prettier": "^1.19.1",
-    "customize-cra": "^0.9.1",
-    "customize-cra-react-refresh": "^1.0.1",
-    "react-app-rewired": "^2.1.5",
-    "babel-plugin-import": "^1.13.0"
+    "react-app-rewired": "^2.1.6"
   }
 }

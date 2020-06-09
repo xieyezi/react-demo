@@ -11,31 +11,15 @@ interface Iprops {
 }
 
 const Home: React.FC<Iprops> = ({ dispatch, goodsList }) => {
-  const [info, setInfo] = useState('')
-  // const [visible, setVisible] = useState(true)
-  // const onVisible = useMemo(() => {
-  //   return () => {
-  //     setVisible(visible => !visible)
-  //   }
-  // }, [])
 
-  // const onVisible = useCallback(() => {
-  //   setVisible(visible => !visible)
-  // }, [])
-  // const changeInfo = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const value = e.target.value
-  //   setInfo(value)
-  // }
   const [visible, setVisible] = useVisible(false)
+
   const modalShow = (value: boolean) => {
     setVisible(value)
   }
 
   return (
     <div style={{ marginTop: '5px', marginLeft: '400px', marginRight: '400px' }}>
-      <p>{info}</p>
-      {/* <Input onChange={e => changeInfo(e)}></Input> */}
-      {/* <Son1 onVisible={onVisible} /> */}
       <Button type="primary" onClick={() => modalShow(true)}>
         Open Modal
       </Button>
